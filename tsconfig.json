@@ -8,5 +8,6 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "types": ["gsap"]
-  }
+  },
+  "files": ["node_modules/gsap/types/index.d.ts"]
 }

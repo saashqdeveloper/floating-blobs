@@ -1,6 +1,6 @@
 import "./styles.css";
 import * as _ from "lodash";
-import { blob } from "./modules/blob";
+import { blob, drag } from "./modules";
 
 class Main {
   constructor() {
@@ -9,6 +9,7 @@ class Main {
 
   private _init() {
     blob.init(".blob", ".blob-content");
+    drag.init("blob-container");
   }
 }
 window.addEventListener("load", () => {

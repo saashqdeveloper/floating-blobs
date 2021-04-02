@@ -1,6 +1,6 @@
 import { ElementDimension, Position } from "../interfaces/index";
 import { getRandomNumber } from "../utils/";
-import { gsap, Sine } from "gsap";
+import { gsap } from "gsap/all";
 
 declare const mt: any;
 export class Blob {
@@ -15,11 +15,9 @@ export class Blob {
   init(blobElementClass: string, floatElementClass: string) {
     this.blobSelector = blobElementClass;
     this.floatElSelector = floatElementClass;
-    document
-      .querySelectorAll(this.blobSelector)
-      .forEach((blob: HTMLElement) => {
-        this.positionBlob(blob);
-      });
+    document.querySelectorAll(this.blobSelector).forEach((blob: Element) => {
+      this.positionBlob(<HTMLElement>blob);
+    });
     this.renderFloatingBlobs();
   }
 
@@ -64,7 +62,7 @@ export class Blob {
   private floatY(target: HTMLElement, direction: number) {
     gsap.to(target, getRandomNumber(3, 5), {
       y: getRandomNumber(1, 10, direction),
-      ease: 'easeInOut',
+      ease: "easeInOut",
       onComplete: () => this.floatY(target, direction * -1),
       duration: 100,
     });
@@ -72,7 +70,7 @@ export class Blob {
   private floatX(target: HTMLElement, direction: number) {
     gsap.to(target, getRandomNumber(3, 5), {
       x: getRandomNumber(1, 50, direction),
-      ease: 'easeInOut',
+      ease: "easeInOut",
       onComplete: () => this.floatX(target, direction * -1),
       duration: 100,
     });
@@ -81,7 +79,7 @@ export class Blob {
   private rotate(target: HTMLElement, direction: number) {
     gsap.to(target, getRandomNumber(5, 10), {
       rotation: getRandomNumber(-10, 10, direction),
-      ease: 'easeInOut',
+      ease: "easeInOut",
       onComplete: () => this.floatY(target, direction * -1),
     });
   }
