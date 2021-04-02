@@ -8,7 +8,7 @@ class Main {
   }
 
   private _init() {
-    blob.init();
+    blob.init(".blob", ".blob-content");
   }
 }
 window.addEventListener("load", () => {

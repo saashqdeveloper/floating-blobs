@@ -1,2 +1,2 @@
 export * from "./blob";
-export * from "./randomGenerator";
+export * from "./drag";
