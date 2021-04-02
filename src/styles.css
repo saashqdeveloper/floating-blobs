@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.blob-container {
+  height: 100vh;
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+}
+.blob-content {
+  border: 1px solid #600;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  line-height: 4rem;
+}
