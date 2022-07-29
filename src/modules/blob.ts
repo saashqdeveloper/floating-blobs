@@ -46,7 +46,7 @@ export class Blob {
     if (this.prevX === 0) {
       position.posX = 10;
     }
-    console.log(position);
+    
     gsap.to(element, 0, {
       x: position.posX,
       y: position.posY,
