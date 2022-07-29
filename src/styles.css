@@ -10,6 +10,7 @@ body {
 .blob-container {
   height: 100vh;
   position: relative;
+  width: 100%;
 }
 
 .blob {

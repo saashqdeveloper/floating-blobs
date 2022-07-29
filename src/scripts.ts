@@ -9,7 +9,7 @@ class Main {
 
   private _init() {
     blob.init(".blob", ".blob-content");
-    drag.init("blob-container");
+    drag.init("blobs");
   }
 }
 window.addEventListener("load", () => {

@@ -35,23 +35,32 @@ export class Blob {
       height: element.offsetHeight,
     };
     const position: Position = {
-      posX: this.prevX + getRandomNumber(30, 200),
-      posY: getRandomNumber(
-        0,
-        document.documentElement.scrollHeight - elDimension.height - 200
+      posX: this.prevX + Math.floor(getRandomNumber(30, 200)),
+      posY: Math.floor(
+        getRandomNumber(
+          0,
+          document.documentElement.scrollHeight - elDimension.height - 200
+        )
       ),
     };
     if (this.prevX === 0) {
       position.posX = 10;
     }
-
-    element.style.transform = `translate3d(${position.posX}px,${position.posY}px, 0)`;
+    console.log(position);
+    gsap.to(element, 0, {
+      x: position.posX,
+      y: position.posY,
+      z: 0,
+      opacity: 1,
+      stagger: 0.5,
+    });
 
     this.prevX = position.posX + elDimension.width + 10;
   }
 
   private renderFloatingBlobs() {
     this.blobs = gsap.utils.toArray(this.floatElSelector);
+    gsap.from(this.blobs, { opacity: 0, stagger: 0.5 });
     this.blobs.forEach((element: any, i: number) => {
       this.floatX(element, 1);
       this.floatY(element, -3);
