@@ -6,7 +6,7 @@ export class Drag {
   constructor() {}
 
   init(selector: string) {
-    this.selector = document.getElementById(selector);
+    this.selector = <HTMLElement>document.getElementById(selector);
     const container = document.getElementById("#blob-container");
     Draggable.create(this.selector, {
       bounds: container,

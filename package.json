@@ -1,6 +1,6 @@
 {
-  "name": "webpack-ts-starter",
-  "version": "1.0.0",
+  "name": "floating-blob",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
